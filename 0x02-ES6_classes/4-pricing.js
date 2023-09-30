@@ -8,10 +8,9 @@ class Pricing {
 
   set amount(myAmount) {
     if (typeof myAmount !== 'number') {
-      this._amount = myAmount;
-    } else {
       throw new TypeError('Amount must be a Number');
     }
+    this._amount = myAmount;
   }
 
   get amount() {
@@ -26,11 +25,23 @@ class Pricing {
     }
   }
 
+  get currency() {
+    return this.currency;
+  }
+
   displayFullPrice() {
     return `${this._amount} ${this._currency.name} (${this._currency._code})`;
   }
 
   static convertPrice(amount, conversionRate) {
+    if (typeof amount !== 'number') {
+      throw new TypeError('amount must be a number');
+    }
+
+    if (typeof conversionRate !== 'number') {
+      throw new TypeError('conversionRate must be a number');
+    }
+
     return amount * conversionRate;
   }
 }
