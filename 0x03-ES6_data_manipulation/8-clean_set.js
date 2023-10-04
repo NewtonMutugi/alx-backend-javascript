@@ -8,6 +8,7 @@ function cleanSet(set, startString) {
     }
     return myString.join('-');
   }
+  return 0;
 }
 
 export default cleanSet;
