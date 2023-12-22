@@ -68,15 +68,15 @@ describe('calculateNumber', () => {
     });
 
     it('numbers with different signs', () => {
-      assert.strictEqual(calculateNumber('DIVIDE', -7.0, 2.0), -3.0);
+      assert.strictEqual(calculateNumber('DIVIDE', -7.0, 2.0), -3.5);
     });
 
     it('numbers with different signs (alternate)', () => {
-      assert.strictEqual(calculateNumber('DIVIDE', 7.0, -2.0), -3.0);
+      assert.strictEqual(calculateNumber('DIVIDE', 7.0, -2.0), -3.5);
     });
 
     it('negative numbers', () => {
-      assert.strictEqual(calculateNumber('DIVIDE', -7.0, -2.0), 4.0);
+      assert.strictEqual(calculateNumber('DIVIDE', -7.0, -2.0), 3.5);
     });
 
     it('equal positive numbers', () => {
