@@ -1,20 +1,18 @@
 function calculateNumber(a, b, type = 'SUM') {
-  const num1 = Math.round(a);
-  const num2 = Math.round(b);
   if (type === 'SUM') {
     // Sum the two integers and return the result
-    return num1 + num2;
+    return Math.round(a) + Math.round(b);
   }
   if (type === 'SUBTRACT') {
     // Subtract the two integers and return the result
-    return num1 - num2;
+    return Math.round(a) - Math.round(b);
   }
   if (type === 'DIVIDE') {
     if (num2 === 0) {
       return 'Error';
     }
     // Divide the two integers and return the result
-    return num1 / num2;
+    return Math.round(a) / Math.round(b);
   }
   throw new TypeError('Type must be SUM, SUBTRACT, or DIVIDE');
 }
