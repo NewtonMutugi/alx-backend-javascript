@@ -1,22 +1,14 @@
+const request = require('request');
 const chai = require('chai');
-const chaiHttp = require('chai-http');
-const app = require('../8-api/api');
+
 const expect = chai.expect;
 
-chai.use(chaiHttp);
-
-describe('API', () => {
-  describe('GET /users', () => {
-    it('should return a list of users', (done) => {
-      chai
-        .request(app)
-        .get('/users')
-        .end((err, res) => {
-          expect(err).to.be.null;
-          expect(res).to.have.status(200);
-          expect(res.body).to.be.an('array');
-          done();
-        });
+describe('API test', () => {
+  it('GET request to the index / endpoint', (done) => {
+    request('http://localhost:7865', (error, response, body) => {
+      expect(response.statusCode).to.equal(200);
+      expect(body).to.equal('Welcome to the payment system');
+      done();
     });
   });
 });
