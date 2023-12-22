@@ -1,20 +1,18 @@
 const Utils = {
-  calculateNumber: function (a, b, type) {
-    let result;
+  calculateNumber(type, a, b) {
     if (type === 'SUM') {
-      result = Math.round(a) + Math.round(b);
-    } else if (type === 'SUBTRACT') {
-      result = Math.round(a) - Math.round(b);
-    } else if (type === 'DIVIDE') {
-      if (Math.round(b) === 0) {
-        result = 'Error';
-      } else {
-        result = Math.round(a) / Math.round(b);
-      }
-    } else {
-      throw new Error('Invalid type');
+      return Math.round(a) + Math.round(b);
     }
-    return result;
+    if (type === 'SUBTRACT') {
+      return Math.round(a) - Math.round(b);
+    }
+    if (type === 'DIVIDE') {
+      if (Math.round(b) === 0) {
+        return 'Error';
+      }
+      return Math.round(a) / Math.round(b);
+    }
+    throw new TypeError('Type is not supported');
   },
 };
 
