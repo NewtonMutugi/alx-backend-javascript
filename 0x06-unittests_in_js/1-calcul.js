@@ -9,7 +9,7 @@ const calculateNumber = (type, a, b) => {
     if (Math.round(b) === 0) {
       return 'Error';
     }
-    return Math.round(Math.round(a) / Math.round(b));
+    return Math.round(a) / Math.round(b);
   }
   throw new TypeError('Invalid type. Please use SUM, SUBTRACT, or DIVIDE.');
 };
