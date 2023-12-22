@@ -8,7 +8,7 @@ function calculateNumber(a, b, type) {
     return Math.round(a) - Math.round(b);
   }
   if (type === 'DIVIDE') {
-    if (num2 === 0) {
+    if (Math.round(b) === 0) {
       return 'Error';
     }
     // Divide the two integers and return the result
