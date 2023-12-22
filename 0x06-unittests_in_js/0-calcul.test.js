@@ -23,5 +23,5 @@ describe('calculateNumber', () => {
   it('should round the second number and return the correct sum', () => {
     assert.strictEqual(calculateNumber(1, 3.7), 5); // 3.7 rounds to 4
     assert.strictEqual(calculateNumber(1, 3.2), 4); // 3.2 rounds to 3
-  });``
+  });
 });
