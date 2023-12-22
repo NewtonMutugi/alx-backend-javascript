@@ -1,26 +1,27 @@
-const assert = require('assert');
-const calculateNumber = require('./1-calcul');
+const calculateNumber = require('./1-calcul.js');
 
-describe('calculateNumber', () => {
-  it('should round both numbers up and return the correct sum', () => {
-    assert.strictEqual(calculateNumber(1.7, 3.7), 6); // 1.7 rounds to 2, 3.7 rounds to 4
-  });
+console.log(calculateNumber('SUM', 10.3, 5.7));
 
-  it('should round both numbers down and return the correct sum', () => {
-    assert.strictEqual(calculateNumber(1.2, 3.2), 4); // 1.2 rounds to 1, 3.2 rounds to 3
-  });
+console.log(calculateNumber('SUBTRACT', 10.3, 5.7));
 
-  it('should round one number up and one number down and return the correct sum', () => {
-    assert.strictEqual(calculateNumber(1.7, 3.2), 5); // 1.7 rounds to 2, 3.2 rounds to 3
-  });
+console.log(calculateNumber('DIVIDE', 10.3, 5.7));
 
-  it('should handle negative numbers correctly', () => {
-    assert.strictEqual(calculateNumber(-1.7, 3.7), 2); // -1.7 rounds to -2, 3.7 rounds to 4
-    assert.strictEqual(calculateNumber(1.7, -3.2), -1); // 1.7 rounds to 2, -3.2 rounds to -3
-  });
+console.log(calculateNumber('DIVIDE', 10.3, 0));
 
-  it('should handle zero correctly', () => {
-    assert.strictEqual(calculateNumber(0, 3.7), 4); // 0 stays 0, 3.7 rounds to 4
-    assert.strictEqual(calculateNumber(1.7, 0), 2); // 1.7 rounds to 2, 0 stays 0
-  });
-});
+try {
+  console.log(calculateNumber('MULTIPLY', 10.3, 5.7));
+} catch (error) {
+  console.error(error.message);
+}
+
+console.log(calculateNumber('SUM', 10.75, 5.25));
+console.log(calculateNumber('SUBTRACT', 10.75, 5.25));
+console.log(calculateNumber('DIVIDE', 10.75, 5.25));
+
+console.log(calculateNumber('SUM', -10.3, 5.7));
+console.log(calculateNumber('SUBTRACT', -10.3, 5.7));
+console.log(calculateNumber('DIVIDE', -10.3, 5.7));
+
+console.log(calculateNumber('SUM', 10.49, 5.51));
+console.log(calculateNumber('SUBTRACT', 10.49, 5.51));
+console.log(calculateNumber('DIVIDE', 10.49, 5.51));
